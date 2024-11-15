@@ -1,0 +1,55 @@
+<mvc:View controllerName="myfioriapp.controller.FormView"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns:layout="sap.ui.layout.form"
+     xmlns:core="sap.ui.core" 
+    xmlns="sap.m">
+    <Page id="_IDGenPage" title="Fiori Form Example">
+        <content>
+            <layout:SimpleForm id="myForm" editable="true" layout="ResponsiveGridLayout">
+                <Label id="_IDGenLabel" text="Name"/>
+                <Input id="name" value="{/formData/name}" />
+
+                <Label id="_IDGenLabel1" text="Email"/>
+                <Input id="email" value="{/formData/email}" type="Email" />
+
+                <Label id="_IDGenLabel2" text="Password"/>
+                <Input id="password" value="{/formData/password}" type="Password" />
+
+                <Label id="_IDGenLabel3" text="Gender"/>
+                <RadioButtonGroup id="gender" selectedKey="{/formData/gender}">
+                    <buttons>
+                        <RadioButton id="_IDGenRadioButton" text="Male" key="Male"/>
+                        <RadioButton id="_IDGenRadioButton1" text="Female" key="Female" />
+                        <RadioButton id="_IDGenRadioButton2" text="Other" key="Other" />
+                    </buttons>
+                </RadioButtonGroup>
+
+                <Label id="_IDGenLabel4" text="Hobbies"/>
+                <CheckBox id="hobbyReading" text="Reading" selected="{/formData/hobbies/reading}" />
+                <CheckBox id="hobbyTraveling" text="Traveling" selected="{/formData/hobbies/traveling}" />
+                <CheckBox id="hobbyCooking" text="Cooking" selected="{/formData/hobbies/cooking}" />
+
+                <Label id="_IDGenLabel5" text="Country"/>
+                <Select id="country" selectedKey="{/formData/country}">
+                    <items>
+                        <core:Item id="_IDGenItem" key="USA" text="USA" />
+                        <core:Item id="_IDGenItem1" key="Canada" text="Canada" />
+                        <core:Item id="_IDGenItem2" key="UK" text="UK" />
+                        <core:Item id="_IDGenItem3" key="Australia" text="Australia" />
+                    </items>
+                </Select>
+
+                <Label id="_IDGenLabel6" text="Bio"/>
+                <TextArea id="bio" value="{/formData/bio}" rows="4" />
+
+                <Label id="_IDGenLabel7" text="Birthdate"/>
+                <DatePicker id="birthdate" value="{/formData/birthdate}" />
+
+                <Button id="_IDGenButton" text="Submit" press="onSubmit"/>
+            </layout:SimpleForm>
+
+            <Text id="_IDGenText1" text="Generated XML:" />
+            <TextArea id="xmlOutput" width="100%" rows="10" value="{/xmlOutput}" editable="false"/>
+        </content>
+    </Page>
+</mvc:View>
